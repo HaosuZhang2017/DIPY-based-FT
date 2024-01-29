@@ -11,8 +11,8 @@ Here, we expect to find these files:
 """
 DEFINE PATH TO YOUR ATLAS HERE
 """
-atlas_t1 = "/Users/Krieg/Desktop/Haosu/code_connectom/Atlas/t1_bet.nii.gz" #This is the T1 corresponding to the atlas (i.e. same space!)
-atlas = "/Users/Krieg/Desktop/Haosu/code_connectom/Atlas/aal.nii.gz" #This is the atlas file (e.g. AAL)
+atlas_t1 = "/Users/Desktop/Atlas/t1_bet.nii.gz" #This is the T1 corresponding to the atlas (i.e. same space!)
+atlas = "/Users/Desktop/Atlas/aal.nii.gz" #This is the atlas file (e.g. AAL)
 gpu = False #Set to true if you have a CUDA-compatible GPU with at least 4GB
 
 import subprocess
