@@ -4,16 +4,14 @@ This script can be called as script.py /path/to/files/
 Here, we expect to find these files:
     1) dti.nii.gz # 4D nifti
     2) t1.nii.gz
-    3) tms_points.nii.gz # In T1 space
+    3) T1-wk.nii.gz # In T1 space, Language points are identified during intraoperative mapping. 
 """
 
 """
 DEFINE PATH TO YOUR ATLAS HERE
 """
-atlas_t1 = "/Users/Krieg/Desktop/Haosu/code_connectom/Atlas/t1_bet.nii.gz" #This is the T1 corresponding to the atlas (i.e. same space!)
-atlas = "/Users/Krieg/Desktop/Haosu/code_connectom/Atlas/aal.nii.gz" #This is the atlas file (e.g. AAL)
-#atlas_t1 = "/Users/apple/Desktop/brain_connectome/Atlas/t1_bet.nii.gz" #This is the T1 corresponding to the atlas (i.e. same space!)
-#atlas = "/Users/apple/Desktop/brain_connectome/Atlas/aal.nii.gz" #This is the atlas file (e.g. AAL)
+atlas_t1 = "/Users/Desktop/Atlas/t1_bet.nii.gz" #This is the T1 corresponding to the atlas (i.e. same space! after skull strip)
+atlas = "/Users/Desktop/Atlas/aal.nii.gz" #This is the atlas file (e.g. AAL)
 
 gpu = False #Set to true if you have a CUDA-compatible GPU with at least 4GB
 
