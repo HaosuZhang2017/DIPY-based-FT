@@ -15,11 +15,12 @@ DEFINE PATH TO YOUR ATLAS HERE
 atlas_c = 'mni'
 
 if atlas_c == 'aal':
-    atlas_t1 = "/Users/Krieg/Desktop/Haosu/code_connectom/Atlas/t1_bet.nii.gz" #This is the T1 corresponding to the atlas (i.e. same space!)
-    atlas = "/Users/Krieg/Desktop/Haosu/code_connectom/Atlas/aal.nii.gz" #This is the atlas file (e.g. AAL)
+    atlas_t1 = "/Users/Desktop/Atlas/t1_bet.nii.gz" #This is the T1 (AAL90) corresponding to the atlas (i.e. same space, after skull strip!)
+    atlas = "/Users/Desktop/Atlas/aal.nii.gz" #original AAL90
 if atlas_c == 'mni':
-    atlas_t1 = "/Volumes/HAOSU/atlas2mm/Atlas/MNI_bet.nii.gz" #This is the T1 corresponding to the atlas (i.e. same space!)
-    atlas = "/Volumes/HAOSU/atlas2mm/Atlas/MNI.nii" #This is the atlas file (e.g. AAL)
+    atlas_t1 = "/Users/Desktop/Atlas/MNI_bet.nii.gz" #This is the T1 (MNI) corresponding to the atlas (i.e. same space, after skull strip!)
+    atlas = "/Users/Desktop/Atlas/MNI.nii" #original MNI
+    )
     
 #atlas_t1 = "/Users/apple/Desktop/brain_connectome/Atlas/t1_bet.nii.gz" #This is the T1 corresponding to the atlas (i.e. same space!)
 #atlas = "/Users/apple/Desktop/brain_connectome/Atlas/aal.nii.gz" #This is the atlas file (e.g. AAL)
