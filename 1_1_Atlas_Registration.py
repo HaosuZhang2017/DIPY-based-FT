@@ -22,9 +22,6 @@ if atlas_c == 'mni':
     atlas = "/Users/Desktop/Atlas/MNI.nii" #original MNI
     )
     
-#atlas_t1 = "/Users/apple/Desktop/brain_connectome/Atlas/t1_bet.nii.gz" #This is the T1 corresponding to the atlas (i.e. same space!)
-#atlas = "/Users/apple/Desktop/brain_connectome/Atlas/aal.nii.gz" #This is the atlas file (e.g. AAL)
-
 gpu = False #Set to true if you have a CUDA-compatible GPU with at least 4GB
 
 import subprocess
@@ -93,6 +90,5 @@ os.remove(folder + '/intra_regInverseWarped.nii.gz')
 os.remove(folder + '/inter_reg1Warp.nii.gz')
 os.remove(folder + '/inter_reg0GenericAffine.mat')
 os.remove(folder + '/intra_reg0GenericAffine.mat')
-# os.remove(folder + '/t1_bet_mask.nii.gz')
 
 print("All registrations done")
