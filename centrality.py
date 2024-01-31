@@ -13,17 +13,9 @@ import sys
 import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
-
 import math
 
-
-outpath= '/Users/apple/Desktop/brain_connectome/036'
-import os
-import os.path
-
 interactive = False
-
-#folder = sys.argv[1] + "/"
 
 folder = os.getcwd()
 filepath = folder
