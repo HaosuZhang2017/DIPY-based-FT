@@ -220,6 +220,17 @@ plt.show()
 居间性中心度（Betweenness Centrality）检测的是节点在图中的信息流上所具有的影响量。
     这通常可用于发现用作从图的一部分到另一部分的桥的节点，比如用在电信网络的数据包传递处理器或假新闻传播分析中。
 """
+"""
+page rank函数的应用，在于发现如果出现某点消失后，对于整个信息传递链的影响程度
+"""
+page_rank=nx.pagerank(G,alpha=0.9)
+page_rank = list(page_rank.values())
+
+plt.figure(figsize=(18, 12))# Degree Centrality
+f, axarr = plt.subplots(1, 1, num=1)
+nx.draw(G, cmap = plt.get_cmap('inferno'), node_color = page_rank, node_size=300, pos=pos, with_labels=True)
+axarr.set_title('Pagerank Centrality', size=16)# Betweenness Centrality
+
 c_degree = nx.degree_centrality(G)
 c_degree = list(c_degree.values())
 
@@ -262,45 +273,4 @@ axarr[1,1].set_title('Betweenness Centrality', size=16)# Betweenness Centrality
 #plt.sca(axarr[1,1])
 #nx.draw(G, cmap = plt.get_cmap('inferno'), node_color = c_betweenness, node_size=300, pos=pos)
 #axarr[1,1]# Betweenness Centrality
-
-"""
-此用于计算平均丛集系数clustering，用于反应节点间的丛集关系，无向图
-"""
-from networkx.algorithms.approximation.clustering_coefficient import average_clustering
-ave_clus=average_clustering(G, trials=1000, seed=None)
-
-
-"""
-https://www.jiqizhixin.com/articles/2019-08-03-3
-此用于社群检测
-是根据给定的质量指标将节点划分为多个分组。
-这通常可用于识别社交社群、客户行为或网页主题。
-社区是指一组相连节点的集合。但是，目前关于社群还没有广泛公认的定义，只是社群内的节点应该要密集地相连。
-Girvan Newman 算法是一个用于发现社群的常用算法。其通过逐步移除网络内的边来定义社区。我们将居间性
-称为「边居间性（edge betweenness）」。这是一个正比于穿过该边的节点对之间最短路径的数量的值。
-在定义 Louvain 方法之前，需要介绍一下模块性（modularity）的概念。
-模块性是一个度量，衡量的是分组被划分为聚类的程度：
-然后，计算最佳的划分方式（基于 Louvain 方法）,Louvain 方法没有理论上的保证，但实践效果很好。
-Louvain方法是networkx 的一个子项目参阅：https://python-louvain.readthedocs.io/en/latest/
-"""
-import community
-partition = community.best_partition(G)
-com_list = partition.values()
-pos = nx.spring_layout(G)
-plt.figure(figsize=(8, 8))
-plt.axis('off')
-nx.draw_networkx_nodes(G, pos, node_size=250, with_labels=True,cmap=plt.cm.RdYlBu, node_color=list(partition.values()))
-nx.draw_networkx_edges(G, pos, alpha=0.3)
-plt.show()
-
-
-
-
-
-
-
-
-
-
-
 
